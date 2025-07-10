@@ -1,0 +1,487 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+        :root {
+            /* Colors */
+            --color-bg: #fcfcfc;
+            --color-text: #1a1a1a;
+            --color-header: #333;
+            --color-subtitle: #666;
+            --color-section-subtitle: hsl(355, 70%, 50%);
+            --color-blockquote: hsl(355, 70%, 45%);
+            --color-blockquote-border: hsl(355, 70%, 45%);
+            --color-blockquote-bg: #fff;
+            --color-blockquote-border-light: hsl(355, 70%, 92%);
+            --color-hr: #555;
+            --color-footnote-ref: hsl(355, 70%, 35%);
+            --color-footnote-ref-hover: hsl(355, 70%, 25%);
+            --color-dynamic-accent-from: hsl(355, 70%, 45%);
+            --color-dynamic-accent-to: hsl(355, 70%, 75%);
+
+            /* Fonts */
+            --font-serif: 'Bodoni Moda', serif;
+            --font-mono: 'IBM Plex Mono', 'Liberation Mono', Menlo, monospace;
+            --font-cursive: 'Cedarville Cursive', cursive;
+
+            /* Font sizes */
+            --fs-main-title: 56pt;
+            --fs-main-title-tablet: 28pt;
+            --fs-main-title-mobile: 30pt;
+            --fs-subtitle: 14pt;
+            --fs-subtitle-tablet: 11pt;
+            --fs-subtitle-mobile: 6pt;
+            --fs-author: 11pt;
+            --fs-author-tablet: 9pt;
+            --fs-body: 12pt;
+            --fs-body-tablet: 10.5pt;
+            --fs-body-mobile: 8.5pt;
+            --fs-h2: 28pt;
+            --fs-h2-tablet: 18pt;
+            --fs-h2-mobile: 10.5pt;
+            --fs-section-subtitle: 14pt;
+            --fs-section-subtitle-tablet: 11pt;
+            --fs-section-subtitle-mobile: 7.5pt;
+            --fs-h3: 12pt;
+            --fs-h3-tablet: 9pt;
+            --fs-h3-mobile: 7pt;
+            --fs-blockquote: 12pt;
+            --fs-blockquote-tablet: 10.5pt;
+            --fs-blockquote-mobile: 8pt;
+            --fs-footnote: 10pt;
+            --fs-footnote-tablet: 9pt;
+            --fs-footnote-mobile: 7.5pt;
+            --fs-footnote-ref: 10pt;
+
+            /* Spacing */
+            --space-body-padding: 80px 60px;
+            --space-body-padding-tablet: 16px 4vw;
+            --space-body-padding-mobile: max(16px, 10vw);
+            --space-header-mb: 40px;
+            --space-header-mb-tablet: 32px;
+            --space-header-mb-mobile: 24px;
+            --space-h2-mt: 50px;
+            --space-h2-mb: 30px;
+            --space-h2-mt-tablet: 32px;
+            --space-h2-mb-tablet: 18px;
+            --space-h2-mt-mobile: 16px;
+            --space-h2-mb-mobile: 8px;
+            --space-blockquote-m: 35px 0;
+            --space-blockquote-m-tablet: 24px 0;
+            --space-blockquote-m-mobile: 16px 0;
+            --space-blockquote-p: 25px 30px;
+            --space-blockquote-p-tablet: 10px 6vw;
+            --space-blockquote-p-mobile: 8px max(16px, 2vw);
+            --space-body-mb: 24px;
+            --space-body-mb-tablet: 16px;
+            --space-body-mb-mobile: 8px;
+            --space-indent: 24pt;
+            --space-indent-tablet: 12pt;
+            --space-indent-mobile: 8pt;
+            --border-thick: 2px;
+            --border-thick-mobile: 1px;
+        }
+        * {
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-serif);
+            line-height: 1.7;
+            color: var(--color-text);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-body-padding);
+            background-color: var(--color-bg);
+            min-height: 100vh;
+            font-weight: 400;
+        }
+
+        /* Hide scrollbar for all browsers */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        
+        html {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        header {
+            text-align: left;
+            margin-bottom: var(--space-header-mb);
+            padding-bottom: 0;
+            border-bottom: none;
+            position: relative;
+        }
+        header::after {
+            content: '';
+            display: block;
+            margin: 32px 0 0 0;
+            width: 100%;
+            height: var(--border-thick);
+            background-color: var(--color-hr);
+        }
+        
+        .subtitle {
+            color: var(--color-subtitle);
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: var(--fs-subtitle);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        
+        .main-title {
+            color: var(--color-header);
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: var(--fs-main-title);
+            line-height: 0.9;
+            margin: 15px 0 25px 0;
+            letter-spacing: -1px;
+            position: relative;
+        }
+        
+        .main-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: var(--border-thick);
+            height: 60px;
+            background-color: var(--color-section-subtitle);
+            transform: translateY(-50%);
+        }
+        
+        .author-line {
+            color: var(--color-subtitle);
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-size: var(--fs-author);
+            font-style: italic;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 15px;
+        }
+        
+        .body-text {
+            font-family: var(--font-serif);
+            font-size: var(--fs-body);
+            margin-bottom: var(--space-body-mb);
+            text-indent: var(--space-indent);
+            line-height: 1.7;
+            text-align: justify;
+            font-weight: 400;
+        }
+        
+        .body-text:first-of-type {
+            /* font-size: 12pt; */
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        
+        .body-text:first-of-type::first-letter {
+            font-size: 68pt;
+            line-height: 50pt;
+            float: left;
+            margin:6px 8px 0 0;
+            font-weight: 700;
+            color: var(--color-blockquote);
+        }
+        
+        h2 {
+            color: var(--color-header);
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: var(--fs-h2);
+            line-height: 1.1;
+            margin: var(--space-h2-mt) 0 var(--space-h2-mb) 0;
+            padding-left: 0;
+            position: relative;
+        }
+        
+        h2::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--color-section-subtitle);
+        }
+        
+        .section-subtitle {
+            color: var(--color-section-subtitle);
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-size: var(--fs-section-subtitle);
+            font-style: italic;
+            position: relative;
+        }
+        
+        h3 {
+            color: var(--color-header);
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-weight: 600;
+            font-size: var(--fs-h3);
+            margin: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .footnote-ref {
+            color: var(--color-footnote-ref);
+            font-family: var(--font-mono);
+            font-size: var(--fs-footnote-ref);
+            font-style: italic;
+            vertical-align: super;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            margin: 16px;
+        }
+        
+        .footnote-ref:hover {
+            color: var(--color-footnote-ref-hover);
+            text-decoration: underline;
+        }
+        
+        .footnotes {
+            margin-top: 60px;
+            padding-bottom: 30px;
+            border-top: none;
+            position: relative;
+        }
+        .footnotes::before {
+            content: '';
+            display: block;
+            margin: 0 0 32px 0;
+            height: var(--border-thick);
+            background-color: var(--color-hr);
+        }
+        
+        .footnotes > * {
+            margin: 0 30px;
+        }
+
+        .footnotes h3 {
+            color: var(--color-header);
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: 10pt;
+            margin-bottom: 25px;
+            padding-left: 0;
+            background: none;
+            text-align: left;
+            font-style: normal;
+        }
+        
+        .footnote {
+            font-size: var(--fs-footnote);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .footnote-number {
+            vertical-align: super;
+            font-size: 10pt;
+        }
+        
+        .footnote-italic {
+            font-style: italic;
+        }
+        
+        em {
+            font-style: italic;
+        }
+        
+        strong {
+            font-weight: bold;
+        }
+        
+        blockquote {
+            margin: var(--space-blockquote-m);
+            padding: var(--space-blockquote-p);
+            background-color: var(--color-blockquote-bg);
+            border-left: 5px solid var(--color-blockquote-border);
+            border-top: 1px solid var(--color-blockquote-border-light);
+            border-bottom: 1px solid var(--color-blockquote-border-light);
+            border-right: 1px solid var(--color-blockquote-border-light);
+            font-family: var(--font-mono);
+            color: var(--color-blockquote);
+            font-size: var(--fs-blockquote);
+            font-weight: 550;
+            line-height: 1.5;
+            position: relative;
+            text-align: center;
+        }
+        
+        blockquote::before {
+            content: '"';
+            font-size: 40pt;
+            color: var(--color-blockquote);
+            position: absolute;
+            top: -5px;
+            left: 10px;
+            font-family: var(--font-serif);
+            opacity: 0.3;
+        }
+                /* Keep only the scroll progress indicator */
+        .dynamic-accent {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 16px;
+            height: 0%;
+            background: linear-gradient(to bottom, var(--color-dynamic-accent-from), var(--color-dynamic-accent-to));
+            z-index: 1000;
+            transition: height 0.1s ease-out;
+        }
+        
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: var(--space-body-padding-tablet);
+                max-width: 100vw;
+            }
+            header {
+                padding-bottom: 24px;
+                margin-bottom: var(--space-header-mb-tablet);
+            }
+            header::after {
+                margin: 24px 0 0 0;
+                height: var(--border-thick);
+            }
+            .main-title {
+                font-size: var(--fs-main-title-tablet);
+                padding: 0;
+                margin: 10px 0 18px 0;
+            }
+            .subtitle {
+                font-size: var(--fs-subtitle-tablet);
+            }
+            .author-line {
+                font-size: var(--fs-author-tablet);
+                padding-top: 8px;
+            }
+            h2 {
+                font-size: var(--fs-h2-tablet);
+                margin: var(--space-h2-mt-tablet) 0 var(--space-h2-mb-tablet) 0;
+            }
+            .section-subtitle {
+                font-size: var(--fs-section-subtitle-tablet);
+            }
+            .body-text {
+                font-size: var(--fs-body-tablet);
+                margin-bottom: var(--space-body-mb-tablet);
+                text-indent: var(--space-indent-tablet);
+            }
+            .body-text:first-of-type::first-letter {
+                font-size: 32pt;
+                line-height: 24pt;
+                margin: 2px 4px 0 0;
+            }
+            blockquote {
+                font-size: var(--fs-blockquote-tablet);
+                padding: var(--space-blockquote-p-tablet);
+                margin: var(--space-blockquote-m-tablet);
+            }
+            .dynamic-accent {
+                width: 8px;
+            }
+            .footnotes {
+                padding: 24px 4vw 0 4vw;
+                margin-top: 32px;
+            }
+            .footnotes::before {
+                margin: 0 0 24px 0;
+                height: var(--border-thick);
+            }
+            .footnotes h3 {
+                font-size: var(--fs-h3-tablet);
+            }
+            .footnote {
+                font-size: var(--fs-footnote-tablet);
+            }
+            div[style*="margin: 50vh"] {
+                margin: 20vh 0 !important;
+                font-size: 18px !important;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                padding-left: var(--space-body-padding-mobile);
+                padding-right: var(--space-body-padding-mobile);
+                padding-top: var(--space-body-padding-mobile);
+                padding-bottom: var(--space-body-padding-mobile);
+            }
+            .main-title {
+                font-size: var(--fs-main-title-mobile);
+            }
+            .subtitle {
+                font-size: var(--fs-subtitle-mobile);
+            }
+            h2 {
+                font-size: var(--fs-h2-mobile);
+            }
+            .section-subtitle {
+                font-size: var(--fs-section-subtitle-mobile);
+            }
+            .body-text {
+                font-size: var(--fs-body-mobile);
+            }
+            blockquote {
+                font-size: var(--fs-blockquote-mobile);
+                padding: var(--space-blockquote-p-mobile);
+            }
+            .footnotes {
+                font-size: var(--fs-footnote-mobile);
+            }
+            .footnotes h3 {
+                font-size: var(--fs-h3-mobile);
+            }
+            .footnote {
+                font-size: var(--fs-footnote-mobile);
+            }
+            .dynamic-accent {
+                width: 8px;
+            }
+            div[style*="margin: 50vh"] {
+                font-size: 10px !important;
+            }
+        }
+        
+        
+        h2 {
+            position: relative;
+        }
+        
+        /* Add some sophisticated touches */
+        article {
+            position: relative;
+        }
+        
+        em {
+            font-style: italic;
+            color: #444;
+        }
+        
+        strong {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* No animations - immediate display */
+        .scroll-reveal {
+            opacity: 1;
+        }
+        
+        .scroll-reveal.revealed {
+            opacity: 1;
+        }
